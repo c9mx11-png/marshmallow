@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>عيد ميلاد سعيد يا Marshmallow 🤍❤️</title>
+  <meta name="description" content="هدية عيد ميلاد من مشعل ❤️">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Reem+Kufi:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- طبقة القلوب والبتلات -->
+  <div id="fx" aria-hidden="true"></div>
+
+  <!-- شاشة الافتتاح -->
+  <section id="intro" class="intro">
+    <div class="intro-card">
+      <div class="envelope" aria-hidden="true">💌</div>
+      <p class="small">من مشعل إلى</p>
+      <h1 class="name">Marshmallow</h1>
+      <div class="mini-cd" id="introCd" aria-label="العد التنازلي لعيد ميلادك">
+        <div class="mini-box"><b id="icD">0</b><span>يوم</span></div>
+        <div class="mini-box"><b id="icH">0</b><span>ساعة</span></div>
+        <div class="mini-box"><b id="icM">0</b><span>دقيقة</span></div>
+        <div class="mini-box"><b id="icS">0</b><span>ثانية</span></div>
+      </div>
+      <p class="small cd-cap" id="introCap">باقي على ميلادك ٢٤ ديسمبر 🎂</p>
+
+      <form id="lockForm" class="lock" autocomplete="off">
+        <label for="pass" class="lock-label">🔒 كلمة سر</label>
+        <input id="pass" class="pass" type="password" inputmode="numeric" placeholder="اكتبي الرقم السري هنا" autocomplete="off" dir="ltr">
+        <p id="passErr" class="pass-err" role="alert"></p>
+        <button type="submit" id="openBtn" class="btn">افتحي هديتك ❤️</button>
+      </form>
+      <p class="small lock-note">في عيد ميلادك بعطيك رقم سري عشان تفتحين هديتك 🤍</p>
+    </div>
+  </section>
+
+  <main id="site" class="site hidden">
+
+    <!-- الهيرو -->
+    <header class="hero" id="top">
+      <div class="big-heart" aria-hidden="true">❤</div>
+      <p class="script">Happy Birthday</p>
+      <h1 class="hero-title">كل عام وإنتي <span class="red">قلبي</span> <br>يا <span class="name-inline">Marshmallow</span> 🤍</h1>
+      <p class="hero-sub">٢٤ ديسمبر · أحلى يوم في السنة 🎂</p>
+      <a href="#message" class="scroll-hint">↓ كملي نزول، فيه كلام لك</a>
+    </header>
+
+    <!-- كاونت داون -->
+    <section class="section" id="countdown-sec">
+      <h2 class="title">⏳ <span id="cdLabel">باقي على ميلادك</span></h2>
+      <div class="countdown" id="countdown">
+        <div class="cd-box"><b id="cdD">0</b><span>يوم</span></div>
+        <div class="cd-box"><b id="cdH">0</b><span>ساعة</span></div>
+        <div class="cd-box"><b id="cdM">0</b><span>دقيقة</span></div>
+        <div class="cd-box"><b id="cdS">0</b><span>ثانية</span></div>
+      </div>
+    </section>
+
+    <!-- رسالة مشعل -->
+    <section class="section" id="message">
+      <h2 class="title">💌 رسالة من مشعل</h2>
+      <article class="letter">
+        <p>مرحبا <strong>Marshmallow</strong> 🤍</p>
+        <p>أنا مشعل، وأبي أقولك كل عام وإنتي بخير يا أحلى وحدة. اليوم يومك، واليوم كله لك إنتي بس.</p>
+        <p>وجودك في حياتي يخليها أهدى وأحلى وأخف. تدرين إن ضحكتك أحلى صوت أسمعه؟ حتى لو كان صوتك من الكول وإحنا نص نايمين 😴</p>
+        <p>الله يسعدك دايم، ويفرّح قلبك زي ما تفرّحين قلبي، وكل سنة وإنتي أقرب لي من اللي قبلها.</p>
+        <p class="sign">— مشعل ❤️</p>
+      </article>
+    </section>
+
+    <!-- الأشياء اللي تحبها -->
+    <section class="section" id="loves">
+      <h2 class="title">🖤 أشياء تحبينها وأحبها فيك</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="emoji">🐱</div>
+          <h3>ليو</h3>
+          <p>قطتك الحلوة ليو، أكيد هو كمان يبي يقولك كل عام وإنتي بخير. يمكن يموء لك مرتين اليوم 🐾</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🎮</div>
+          <h3>فالورانت</h3>
+          <p>نلعب فالو سوا؟ ولو خسرنا، عادي. المهم إنتي معي، وإنتي أحسن لاعبة عندي دايم 😌🔥</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🎧</div>
+          <h3>الكول</h3>
+          <p>نجلس في الكول مع بعض، نسولف ونضحك، لين نص الليل ونغفى ونحن لسا على الخط 😴🤍</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- كلام يفرحها -->
+    <section class="section" id="sweet">
+      <h2 class="title">🌹 اضغطي وشوفي</h2>
+      <div class="sweet-box">
+        <p id="sweetText" class="sweet-text">اضغطي على الزر عشان تطلع لك كلمة حلوة 🤍</p>
+        <button id="sweetBtn" class="btn">كلمة حلوة ❤️</button>
+      </div>
+    </section>
+
+    <!-- الكيك -->
+    <section class="section" id="cake-sec">
+      <h2 class="title">🎂 اطفي الشمعة</h2>
+      <div class="cake" id="cake" role="button" tabindex="0" aria-label="اضغطي لإطفاء الشمعة">
+        <div class="flame" id="flame"></div>
+        <div class="candle"></div>
+        <div class="layer l1"></div>
+        <div class="layer l2"></div>
+        <div class="plate"></div>
+      </div>
+      <p id="cakeHint" class="hint">اضغطي على الكيك، واطلبي أمنية 🤍</p>
+    </section>
+
+    <footer class="footer">
+      <p class="script">Happy Birthday, Marshmallow</p>
+      <p>صُنع بكل حب من <strong>مشعل</strong> ❤️</p>
+      <button id="burstBtn" class="btn ghost">أمطري قلوب 💖</button>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
