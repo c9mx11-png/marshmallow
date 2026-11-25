@@ -166,7 +166,12 @@
     'يا عمري، حتى لو نمت بالكول، صوتك آخر شي أسمعه وأحلى شي أصحى عليه 🎧',
     'نقطة منك بس، وأعرف إنك تبيني. وأنا دايم هنا 🤍',
     'نتستنا بعض نصحى، وهذا أحلى انتظار في يومي ☀️',
-    'صح النوم يا روحي، يومي ما يبدأ إلا بك 🤍'
+    'صح النوم يا روحي، يومي ما يبدأ إلا بك 🤍',
+    'كل شوي أطمن عليك، لأن راحتي إنك ترتاحين وتنامين 🌙🤍',
+    'قلتي ما أقدر أعيش بدونك، وصدقتي والله 😌❤️',
+    'جيتي وقلتي «جايه»، وأحلى كلمة سمعتها ذاك اليوم 💜',
+    'ضحكتك وإنتي تقولين «استمر في تحسين» أحلى من أي مدح 😂🎮',
+    'حتى لو أنا ألعب أسوأ لعب، يكفي إنك معي 🎮🤍'
   ];
   var sweetText = document.getElementById('sweetText');
   var last = -1;
@@ -224,7 +229,12 @@
     ['ايش تسوي', 'أفكر فيك… وإنتي؟ 🤍'],
     ['صحيت؟', 'نتستنا بعض نصحى، وهذا أحلى انتظار ☀️😴'],
     ['مشتاقتلك', 'وأنا أكثر، والمسافة ما تفرق، الكول بيننا 🎧🤍'],
-    ['المايك عدله', 'أمرك 🎙️ عشان ما يفوتك شي من صوتي 😂']
+    ['المايك عدله', 'أمرك 🎙️ عشان ما يفوتك شي من صوتي 😂'],
+    ['نمتي؟', 'كل شوي أطمن عليك، ما أرتاح إلا لما تنامين 🌙🤍'],
+    ['تعالي', 'جاي لك قبل ما تكملينها 😌💜'],
+    ['اجيك؟', 'قولي بس «تعالي»، وأنا أنتظرك دايم 🤍'],
+    ['استمر في تحسين', 'والله أتحسن عشانك، وإنتي أحسن مدربة 😂🎮'],
+    ['💜', '💜 وهذا القلب من الفجر لين الفجر، دايم لك 🤍']
   ];
   var chips = document.getElementById('chips');
   var chipText = document.getElementById('chipText');
@@ -257,6 +267,123 @@
     moreCount.textContent = 'الجولة ' + moreN + '، وما حد فاز للحين 😂';
     for (var k = 0; k < 6; k++) setTimeout(spawnHeart, k * 80);
   });
+
+  // افتحي لما...
+  var envData = [
+    { e: '💔', t: 'لما تزعلين', h: 'لما تزعلين', m: 'أول شي، تعالي حضن كبير من بعيد 🫂 مهما كان اللي مزعلك، هو أصغر منك ومن قلبك الكبير. خذي نفس وقولي لي، أنا أسمعك وما أقاطعك. وإنتي ما خليتي أحد زعل إلا وانتي تسامحينه، فسامحي نفسك كمان 🤍' },
+    { e: '🌙', t: 'لما ما تقدرين تنامين', h: 'لما ما تقدرين تنامين', m: 'ترى أنا صاحي معك. افتحي الكول وخلينا نسولف عن أي شي، وإذا غفيتي أنا ما أسكر، وأنتظر أسمع صوتك لين الصبح 🎧😴 وكل شوي أطمن عليك نمتي؟ 😂' },
+    { e: '🥺', t: 'لما تشتاقين لي', h: 'لما تشتاقين لي', m: 'الحين إنتي ما تدرين، بس أنا أشتاق لك أكثر 😌 ابعثي لي نقطة «.» وأنا أعرف كل شي، والباقي أقوله أنا. وكل مسافة بيننا يقصرها الكول 🤍' },
+    { e: '😂', t: 'لما تبين تضحكين', h: 'لما تبين تضحكين', m: 'تذكري يوم قلتي لي «استمر في تحسين» وأنا ألعب أسوأ لعب في حياتي 😂🎮 وتذكري «معلش بالغلط» اللي صارت بداية كل شي. وإذا ما ضحكتي لحد الحين، أنا جاهز أسوي أي شي عشان ضحكتك 🤣' },
+    { e: '🎮', t: 'لما تخسرين في فالو', h: 'لما تخسرين في فالو', m: 'اللي خسّرك مو أنتي، الفريق 😤 وإنتي دايم الـ MVP عندي. نعيدها مرة ثانية ونفوز، وإذا ما فزنا، عادي، يكفي إنك معي 🤍🔥' },
+    { e: '☀️', t: 'لما تصحين الصبح', h: 'لما تصحين الصبح', m: 'صباح الخير يا أحلى شي بصبحي ☀️ أتمنى يومك خفيف وكله خير، ولا تنسين تاكلين وتشربين موية وتبتسمين، وعدّلي مزاجك وأنا معك طول اليوم 🤍' }
+  ];
+  var envs = document.getElementById('envs');
+  var envLetter = document.getElementById('envLetter');
+  var envBtns = [];
+  envData.forEach(function (d, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'env';
+    b.setAttribute('aria-pressed', 'false');
+    var ei = document.createElement('span');
+    ei.className = 'ei';
+    ei.setAttribute('aria-hidden', 'true');
+    ei.textContent = d.e;
+    b.appendChild(ei);
+    b.appendChild(document.createTextNode('افتحي ' + d.t));
+    b.addEventListener('click', function () {
+      envBtns.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true');
+      envLetter.innerHTML = '';
+      var h = document.createElement('h3'); h.textContent = '💌 ' + d.h;
+      var p = document.createElement('p'); p.textContent = d.m;
+      var s = document.createElement('p'); s.className = 'sign'; s.textContent = '— مشعل ❤️';
+      envLetter.appendChild(h); envLetter.appendChild(p); envLetter.appendChild(s);
+      envLetter.classList.remove('swap');
+      void envLetter.offsetWidth;
+      envLetter.classList.add('swap');
+      for (var k = 0; k < 6; k++) setTimeout(spawnHeart, k * 80);
+    });
+    envs.appendChild(b);
+    envBtns.push(b);
+  });
+
+  // قسايم هدايا
+  var coupons = [
+    { e: '🎮', t: 'ساعتين فالو', d: 'نلعب فالو سوا ساعتين وأنا أدعمك، وإنتي القائدة ما حد يعارضك 😌' },
+    { e: '🎬', t: 'ليلة فيلم', d: 'إنتي تختارين الفيلم، حتى لو كان Knives Out للمرة العاشرة 🔪' },
+    { e: '🎧', t: 'كول لين تنامين', d: 'أسهر معك في الكول وأنتظرك لين تغفين، وأطمن عليك بعد 😴🤍' },
+    { e: '🗣️', t: 'إزعاج بلا حدود', d: 'تزعجيني متى ما تبين ومن غير ما أتضايق، أنا أحب إزعاجك 😂' },
+    { e: '🎨', t: 'رسمة منك', d: 'ارسمي لي لوحة صغيرة، وأعلقها عندي وأفتخر فيها قدام الكل 🖌️' },
+    { e: '👂', t: 'أسمعك لين تخلصين', d: 'تفضفضين وأنا أسمع، من غير ما أقاطعك ومن غير أحكام 🤍' }
+  ];
+  var cl = document.getElementById('couponList');
+  coupons.forEach(function (c, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'coupon';
+    b.setAttribute('aria-pressed', 'false');
+    var tag = document.createElement('span'); tag.className = 'cp-tag'; tag.textContent = 'قسيمة ' + (i + 1) + ' · صالحة دايم';
+    var ti = document.createElement('span'); ti.className = 'cp-title'; ti.textContent = c.e + ' ' + c.t;
+    var de = document.createElement('span'); de.className = 'cp-desc'; de.textContent = c.d;
+    var st = document.createElement('span'); st.className = 'cp-state'; st.textContent = 'اضغطي للاستخدام 🎁';
+    b.appendChild(tag); b.appendChild(ti); b.appendChild(de); b.appendChild(st);
+    b.addEventListener('click', function () {
+      var used = b.classList.toggle('used');
+      b.setAttribute('aria-pressed', used ? 'true' : 'false');
+      st.textContent = used ? 'تم الاستخدام ✅ قولي لي متى تبينها 🤍' : 'اضغطي للاستخدام 🎁';
+      if (used) {
+        var r = b.getBoundingClientRect();
+        popAt(r.left + r.width / 2, r.top + r.height / 2);
+        for (var k = 0; k < 8; k++) setTimeout(spawnHeart, k * 70);
+      }
+    });
+    cl.appendChild(b);
+  });
+
+  // أسباب أحبك
+  var reasons = [
+    'ضحكتك، تغيّر يومي كله 🤍',
+    'قلبك الطيب، وتسامحك اللي يعجز عنه كثير ❤️',
+    'لأنك تخافين علي وإنتي تقولين «لا تسهر وانتبه لنفسك» 🥹',
+    'لأن صوتك آخر شي أسمعه وأول شي أبيه 🎧',
+    'لأنك تخليني أضحك حتى وأنا تعبان 😂',
+    'لأنك صادقة ووفية، وهذا أجمل شي فيك ✨',
+    'لأن حبك لليو يطلع حنانك الحلو 🐱',
+    'لأنك تحبين الرسم وفيك موهبة تستاهل تبان 🎨',
+    'لأنك تقولين «جايه» وتجين، وأحس إني مهم عندك 💜',
+    'لأنك تدعميني في الفالو حتى لو ألعب مو زين 😂🎮',
+    'لأنك تسمعيني من غير ما تملين 🤍',
+    'لأن حتى «معلش بالغلط» منك صارت أحلى بداية 😌',
+    'لأنك تخليني أبي أكون أحسن كل يوم ❤️',
+    'لأنك Marshmallow، ناعمة وحلوة وتذوّبين القلب ☁️🤍'
+  ];
+  var reasonText = document.getElementById('reasonText');
+  var reasonNo = document.getElementById('reasonNo');
+  var rN = 0;
+  document.getElementById('reasonBtn').addEventListener('click', function () {
+    var idx = rN % reasons.length;
+    reasonNo.textContent = 'السبب رقم ' + (idx + 1) + ' من ' + reasons.length + ' ❤️';
+    reasonText.classList.remove('swap');
+    void reasonText.offsetWidth;
+    reasonText.textContent = reasons[idx];
+    reasonText.classList.add('swap');
+    rN++;
+    if (rN === reasons.length) { setTimeout(function () { reasonNo.textContent = 'وبعد في أسباب أكثر، ما تخلص 🤍'; }, 2500); }
+    for (var k = 0; k < 6; k++) setTimeout(spawnHeart, k * 80);
+  });
+
+  // ظهور ناعم للأقسام عند النزول
+  if ('IntersectionObserver' in window) {
+    document.body.classList.add('js-reveal');
+    var revealEls = document.querySelectorAll('.section');
+    var ro = new IntersectionObserver(function (es) {
+      es.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); ro.unobserve(en.target); }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(function (el) { el.classList.add('reveal'); ro.observe(el); });
+  }
 
   cake.addEventListener('click', blow);
   cake.addEventListener('keydown', function (e) {
